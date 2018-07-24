@@ -18,17 +18,20 @@ var hero17 = 'img/hero/thor.jpg';
 var hero18 = 'img/hero/tocha.jpg';
 
 var heros = [hero1, hero2, hero3, hero4, hero5, hero6, hero7, hero8, hero9, hero10, hero11, hero12, hero13, hero14, hero15, hero16, hero17, hero18];
+var heros1 = heros.sort();
+var heros2 = heros1.sort();
+var heros3 = heros2.sort();
+var heros4 = heros3.sort();
+var heros5 = heros4.sort();
+var heros6 = heros5.sort();
 
 function refresh() {
-    $('#re').addClass('fa-spin');
-
+    $('#fresh').addClass('fa-spin');
 }
-
-
+    
 function refresh() {
-    location.reload();
+    $('#will').load('#will');
 }
-
 
 if (window.innerWidth < 992) {
 
@@ -41,8 +44,7 @@ if (window.innerWidth < 992) {
     $("#18").remove();
     $("#23").remove();
     $("#24").remove();
-    var y = 2;
-
+    
 
     function card1() {
 
@@ -353,13 +355,14 @@ function resizeSmall() {
         $("#18").remove();
         $("#23").remove();
         $("#24").remove();
-        
-        i=1;
+
+        i = 1;
 
     } else if (window.innerWidth > 992 && i == 1) {
 
 
         alert("Reset the game for a full deck of cards")
+
 
 
     }
