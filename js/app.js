@@ -426,7 +426,7 @@ function resizeSmall() {
     }
 }
 // Funtion time when the player hit the first card start the timer
-if(showTimer == 1 ) {
+if(showTimer = 1 ) {
     sec = 'second'
 }
 $("#will1").click( function timer(){
