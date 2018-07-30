@@ -9,7 +9,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>William's memory game</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 </head>
@@ -20,11 +19,14 @@
         <div class="col-12">
             <h1 class="text-center">William's memory game</h1>
         </div>
+        <div>
+            <h2 id="contador"></h2>
+        </div>
     </header>
 
-    <body  class="border-left bcg" background="img/marvel.png">
+    <body  id="will2" class="border-left bcg" background="img/marvel.png">
         <section class="row">
-            <div class="col-4 col-sm-11 col-md-11 col-lg-11">
+            <div class="col-8 col-sm-11 col-md-11 col-lg-11">
                 <span class="font-weight-bold">&emsp;&ensp;&emsp;&ensp;Rating</span>
                 <br/>
                 <i class="fa fa-star fa-spin" style="font-size:50px;"></i>
@@ -34,8 +36,8 @@
                 <br/>
             </div>
             
-            <div class="col-2 col-sm-1 col-md-1 col-lg-1">
-                <span class="font-weight-bold ">&ensp;Reset</span>
+            <div class="col-1 col-sm-1 col-md-1 col-lg-1">
+                <span class="font-weight-bold ">Reset</span>
                 <br/>
                 <i id="fresh" class="fa fa-refresh fa-4x"></i>
                 <br/>
@@ -43,37 +45,37 @@
             </div>
         </section>
 
-        <main class="p-3">
+        <main id="will1" class="p-3">
 
             <div class="row" id="l1">
                 <div class="p-1 col-3 col-sm-3 col-md-3 col-lg-2">
                     <a id="1">
-                    <img class="card img-fluid img-rounded" src="img/shield.jpg" alt="marvel" onclick="" id="">
+                    <img class="card will img-fluid img-rounded" src="img/shield.jpg" alt="marvel" id="">
                 </a>
                 </div>
                 <div class="p-1 col-3 col-sm-3 col-md-3 col-lg-2">
                     <a id="2">
-                    <img class="card img-fluid img-rounded" src="img/shield.jpg" alt="marvel" onclick="" id="">
+                    <img class="card will img-fluid img-rounded" src="img/shield.jpg" alt="marvel" id="">
                 </a>
                 </div>
                 <div class="p-1 col-3 col-sm-3 col-md-3 col-lg-2">
                     <a id="3">
-                    <img class="card img-fluid img-rounded" src="img/shield.jpg" alt="marvel" onclick="" id="">
+                    <img class="card will img-fluid img-rounded" src="img/shield.jpg" alt="marvel" id="">
                 </a>
                 </div>
                 <div class="p-1 col-3 col-sm-3 col-md-3 col-lg-2">
                     <a id="4">
-                    <img class="card img-fluid img-rounded" src="img/shield.jpg" alt="marvel" onclick="" id="">
+                    <img class="card will img-fluid img-rounded" src="img/shield.jpg" alt="marvel" id="">
                 </a>
                 </div>
                 <div class="p-1 col-3 col-sm-3 col-md-3 col-lg-2" id="r1-c5">
                     <a id="5">
-                    <img class="card img-fluid img-rounded" src="img/shield.jpg" alt="marvel" onclick="" id="">
+                    <img class="card will img-fluid img-rounded" src="img/shield.jpg" alt="marvel" id="">
                 </a>
                 </div>
                 <div class="p-1 col-3 col-sm-3 col-md-3 col-lg-2" id="r1-c6">
                     <a id="6">
-                    <img class="card img-fluid img-rounded" src="img/shield.jpg" alt="marvel" onclick="" id="">
+                    <img class="card will img-fluid img-rounded" src="img/shield.jpg" alt="marvel" id="">
                 </a>
                 </div>
             </div>
@@ -81,32 +83,32 @@
             <div class="row" id="l2">
                 <div class="p-1 col-3 col-sm-3 col-md-3 col-lg-2">
                     <a id="7">
-                    <img class="card img-fluid img-rounded" src="img/shield.jpg" alt="marvel" onclick="" id="">
+                    <img class="card will img-fluid img-rounded" src="img/shield.jpg" alt="marvel" id="">
                 </a>
                 </div>
                 <div class="p-1 col-3 col-sm-3 col-md-3 col-lg-2">
                     <a id="8">
-                    <img class="card img-fluid img-rounded" src="img/shield.jpg" alt="marvel" onclick="" id="">
+                    <img class="card will img-fluid img-rounded" src="img/shield.jpg" alt="marvel" id="">
                 </a>
                 </div>
                 <div class="p-1 col-3 col-sm-3 col-md-3 col-lg-2">
                     <a id="9">
-                    <img class="card img-fluid img-rounded" src="img/shield.jpg" alt="marvel" onclick="" id="">
+                    <img class="card will img-fluid img-rounded" src="img/shield.jpg" alt="marvel" id="">
                 </a>
                 </div>
                 <div class="p-1 col-3 col-sm-3 col-md-3 col-lg-2">
                     <a id="10">
-                    <img class="card img-fluid img-rounded" src="img/shield.jpg" alt="marvel" onclick="" id="">
+                    <img class="card will img-fluid img-rounded" src="img/shield.jpg" alt="marvel" id="">
                 </a>
                 </div>
                 <div class="p-1 col-3 col-sm-3 col-md-3 col-lg-2" id="11">
                     <a>
-                    <img class="card img-fluid img-rounded" src="img/shield.jpg" alt="marvel" onclick="" id="">
+                    <img class="card will img-fluid img-rounded" src="img/shield.jpg" alt="marvel" id="">
                 </a>
                 </div>
                 <div class="p-1 col-3 col-sm-3 col-md-3 col-lg-2" id="12">
                     <a>
-                    <img class="card img-fluid img-rounded" src="img/shield.jpg" alt="marvel" onclick="" id="">
+                    <img class="card will img-fluid img-rounded" src="img/shield.jpg" alt="marvel" id="">
                 </a>
                 </div>
             </div>
@@ -114,32 +116,32 @@
             <div class="row" id="l3">
                 <div class="p-1 col-3 col-sm-3 col-md-3 col-lg-2">
                     <a id="13">
-                    <img class="card  will13 img-fluid img-rounded" src="img/shield.jpg" alt="marvel" onclick="" id="">
+                    <img class="card  will img-fluid img-rounded" src="img/shield.jpg" alt="marvel" id="">
                 </a>
                 </div>
                 <div class="p-1 col-3 col-sm-3 col-md-3 col-lg-2">
                     <a id="14">
-                    <img class="card will14 img-fluid img-rounded" src="img/shield.jpg" alt="marvel" onclick="" id="">
+                    <img class="card will  img-fluid img-rounded" src="img/shield.jpg" alt="marvel" id="">
                 </a>
                 </div>
                 <div class="p-1 col-3 col-sm-3 col-md-3 col-lg-2">
                     <a id="15">
-                    <img class="card will15 img-fluid img-rounded" src="img/shield.jpg" alt="marvel" onclick="" id="">
+                    <img class="card will  img-fluid img-rounded" src="img/shield.jpg" alt="marvel" id="">
                 </a>
                 </div>
                 <div class="p-1 col-3 col-sm-3 col-md-3 col-lg-2">
                     <a id="16">
-                    <img class="card will16 img-fluid img-rounded" src="img/shield.jpg" alt="marvel" onclick="" id="">
+                    <img class="card will  img-fluid img-rounded" src="img/shield.jpg" alt="marvel" id="">
                 </a>
                 </div>
                 <div class="p-1 col-3 col-sm-3 col-md-3 col-lg-2">
                     <a id="17">
-                    <img class="card will17 img-fluid img-rounded" src="img/shield.jpg" alt="marvel" onclick="" id="">
+                    <img class="card will  img-fluid img-rounded" src="img/shield.jpg" alt="marvel" id="">
                 </a>
                 </div>
                 <div class="p-1 col-3 col-sm-3 col-md-3 col-lg-2">
                     <a id="18">
-                    <img class="card will18 img-fluid img-rounded" src="img/shield.jpg" alt="marvel" onclick="" id="">
+                    <img class="card will img-fluid img-rounded" src="img/shield.jpg" alt="marvel" id="">
                 </a>
                 </div>
             </div>
@@ -147,32 +149,32 @@
             <div class="row" id="l4">
                 <div class="p-1 col-3 col-sm-3 col-md-3 col-lg-2">
                     <a id="19">
-                    <img class="card will19 img-fluid img-rounded" src="img/shield.jpg" alt="marvel" onclick="" id="">
+                    <img class="card will img-fluid img-rounded" src="img/shield.jpg" alt="marvel" id="">
                 </a>
                 </div>
                 <div class="p-1 col-3 col-sm-3 col-md-3 col-lg-2">
                     <a id="20">
-                    <img class="card will20 img-fluid img-rounded" src="img/shield.jpg" alt="marvel" onclick="" id="">
+                    <img class="card will img-fluid img-rounded" src="img/shield.jpg" alt="marvel" id="">
                 </a>
                 </div>
                 <div class="p-1 col-3 col-sm-3 col-md-3 col-lg-2">
                     <a id="21">
-                    <img class="card will21 img-fluid img-rounded" src="img/shield.jpg" alt="marvel" onclick="" id="">
+                    <img class="card will img-fluid img-rounded" src="img/shield.jpg" alt="marvel" id="">
                 </a>
                 </div>
                 <div class="p-1 col-3 col-sm-3 col-md-3 col-lg-2">
                     <a id="22">
-                    <img class="card will22 img-fluid img-rounded" src="img/shield.jpg" alt="marvel" onclick="" id="">
+                    <img class="card will img-fluid img-rounded" src="img/shield.jpg" alt="marvel" id="">
                 </a>
                 </div>
                 <div class="p-1 col-3 col-sm-3 col-md-3 col-lg-2">
                     <a id="23">
-                    <img class="card will23 img-fluid img-rounded" src="img/shield.jpg" alt="marvel" onclick="" id="">
+                    <img class="card will img-fluid img-rounded" src="img/shield.jpg" alt="marvel" id="">
                 </a>
                 </div>
                 <div class="p-1 col-3 col-sm-3 col-md-3 col-lg-2">
                     <a id="24">
-                    <img class="card will24 img-fluid img-rounded" src="img/shield.jpg" alt="marvel" onclick="" id="">
+                    <img class="card will img-fluid img-rounded" src="img/shield.jpg" alt="marvel" id="">
                 </a>
                 </div>
             </div>
