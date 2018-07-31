@@ -4,6 +4,7 @@ var showTimer;
 var started = false;
 var moves = 0;
 var solvedCount = 0;
+var countingStars = 0;
 var count1 = 0;
 var count2 = 0;
 var count3 = 0;
@@ -30,21 +31,22 @@ var count23 = 0;
 var count24 = 0;
 // Array with heros card's image path. 
 var heros = ['img/hero/america.png',
-             'img/hero/arqueiro.jpg',
-             'img/hero/capMarvel.jpg',
-             'img/hero/coisa.jpg',
-             'img/hero/demolidor.jpg',
-             'img/hero/estranho.jpg',
-             'img/hero/falcao.jpg',
-             'img/hero/feiticeira.jpg',
-             'img/hero/hulk.jpg',
-             'img/hero/invisivel.jpg',
-             'img/hero/ironMan.jpg',
-             'img/hero/motoqueiro.jpg',
-             'img/hero/spidey.jpg',
-             'img/hero/surfer.jpg',
-             'img/hero/thor.jpg',
-             'img/hero/tocha.jpg'];
+    'img/hero/arqueiro.jpg',
+    'img/hero/capMarvel.jpg',
+    'img/hero/coisa.jpg',
+    'img/hero/demolidor.jpg',
+    'img/hero/estranho.jpg',
+    'img/hero/falcao.jpg',
+    'img/hero/feiticeira.jpg',
+    'img/hero/hulk.jpg',
+    'img/hero/invisivel.jpg',
+    'img/hero/ironMan.jpg',
+    'img/hero/motoqueiro.jpg',
+    'img/hero/spidey.jpg',
+    'img/hero/surfer.jpg',
+    'img/hero/thor.jpg',
+    'img/hero/tocha.jpg'
+];
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
     var currentIndex = array.length,
@@ -69,7 +71,7 @@ function shuffle(array) {
 // Set var heros to suffle
 heros = shuffle(heros);
 // An event function to reset the game
-$("#fresh").click(function () {
+$("#fresh").click(function() {
     $('#fresh').addClass('fa-spin');
     location.reload();
 });
@@ -98,7 +100,7 @@ if (window.innerWidth < 992) {
             return o;
         }
         var myArr = shuffle(range(max));
-        return function () {
+        return function() {
             return myArr.shift();
         };
     }
@@ -130,84 +132,100 @@ if (window.innerWidth < 992) {
     document.getElementsByTagName("img")[14].setAttribute("id", functions1[result1[14]]);
     document.getElementsByTagName("img")[15].setAttribute("id", functions1[result1[15]]);
 
-    $("#card1").click(function () {
+    $("#card1").click(function() {
         $('#card1').addClass('animated flipInX');
         document.getElementById("card1").src = heros[0];
+        car1()
     });
 
-    $("#card2").click(function () {
+    $("#card2").click(function() {
         $('#card2').addClass('animated flipInX');
         document.getElementById("card2").src = heros[1];
+        car2()
     });
 
-    $("#card3").click(function () {
+    $("#card3").click(function() {
         $('#card3').addClass('animated flipInX');
         document.getElementById("card3").src = heros[2];
+        car3()
     });
 
-    $("#card4").click(function () {
+    $("#card4").click(function() {
         $('#card4').addClass('animated flipInX');
         document.getElementById("card4").src = heros[3];
+        car4()
     });
 
-    $("#card7").click(function () {
+    $("#card7").click(function() {
         $('#card7').addClass('animated flipInX');
         document.getElementById("card7").src = heros[4];
+        car7()
     });
 
-    $("#card8").click(function () {
+    $("#card8").click(function() {
         $('#card8').addClass('animated flipInX');
         document.getElementById("card8").src = heros[5];
+        car8()
     });
 
-    $("#card9").click(function () {
+    $("#card9").click(function() {
         $('#card9').addClass('animated flipInX');
         document.getElementById("card9").src = heros[6];
+        car9()
     });
 
-    $("#card10").click(function () {
+    $("#card10").click(function() {
         $('#card10').addClass('animated flipInX');
         document.getElementById("card10").src = heros[7];
+        car10()
     });
 
-    $("#card13").click(function () {
+    $("#card13").click(function() {
         $('#card13').addClass('animated flipInX');
         document.getElementById("card13").src = heros[0];
+        car13()
     });
 
-    $("#card14").click(function () {
+    $("#card14").click(function() {
         $('#card14').addClass('animated flipInX');
         document.getElementById("card14").src = heros[1];
+        car14()
     });
 
-    $("#card15").click(function () {
+    $("#card15").click(function() {
         $('#card15').addClass('animated flipInX');
         document.getElementById("card15").src = heros[2];
+        car15()
     });
 
-    $("#card16").click(function () {
+    $("#card16").click(function() {
         $('#card16').addClass('animated flipInX');
         document.getElementById("card16").src = heros[3];
+        car16()
     });
 
-    $("#card19").click(function () {
+    $("#card19").click(function() {
         $('#card19').addClass('animated flipInX');
         document.getElementById("card19").src = heros[4];
+        car19()
     });
 
-    $("#card20").click(function () {
+    $("#card20").click(function() {
         $('#card20').addClass('animated flipInX');
         document.getElementById("card20").src = heros[5];
+        car20()
     });
 
-    $("#card21").click(function () {
+    $("#card21").click(function() {
         $('#card21').addClass('animated flipInX');
         document.getElementById("card21").src = heros[6];
+        car21()
     });
 
-    $("#card22").click(function () {
+    $("#card22").click(function() {
         $('#card22').addClass('animated flipInX');
         document.getElementById("card22").src = heros[7];
+        car22()
     });
 }
 // An if to set the deck when the screen is above 992 pixel's width.
@@ -226,7 +244,7 @@ if (window.innerWidth > 992) {
             return o;
         }
         var myArr = shuffle(range(max));
-        return function () {
+        return function() {
             return myArr.shift();
         };
     }
@@ -266,145 +284,145 @@ if (window.innerWidth > 992) {
     document.getElementsByTagName("img")[22].setAttribute("id", functions[result[22]]);
     document.getElementsByTagName("img")[23].setAttribute("id", functions[result[23]]);
 
-    $("#card1").click(function () {
+    $("#card1").click(function() {
         $('#card1').addClass('animated flipInX');
         document.getElementById("card1").src = heros[0];
         car1()
     });
 
-    $("#card2").click(function () {
+    $("#card2").click(function() {
         $('#card2').addClass('animated flipInX');
         document.getElementById("card2").src = heros[1];
         car2()
     });
 
-    $("#card3").click(function () {
+    $("#card3").click(function() {
         $('#card3').addClass('animated flipInX');
         document.getElementById("card3").src = heros[2];
         car3()
     });
 
-    $("#card4").click(function () {
+    $("#card4").click(function() {
         $('#card4').addClass('animated flipInX');
         document.getElementById("card4").src = heros[3];
         car4()
     });
 
-    $("#card5").click(function () {
+    $("#card5").click(function() {
         $('#card5').addClass('animated flipInX');
         document.getElementById("card5").src = heros[4];
         car5();
     });
 
-    $("#card6").click(function () {
+    $("#card6").click(function() {
         $('#card6').addClass('animated flipInX');
         document.getElementById("card6").src = heros[5];
         car6();
     });
 
-    $("#card7").click(function () {
+    $("#card7").click(function() {
         $('#card7').addClass('animated flipInX');
         document.getElementById("card7").src = heros[6];
         car7()
     });
 
-    $("#card8").click(function () {
+    $("#card8").click(function() {
         $('#card8').addClass('animated flipInX');
         document.getElementById("card8").src = heros[7];
         car8()
     });
 
-    $("#card9").click(function () {
+    $("#card9").click(function() {
         $('#card9').addClass('animated flipInX');
         document.getElementById("card9").src = heros[8];
         car9()
     });
 
-    $("#card10").click(function () {
+    $("#card10").click(function() {
         $('#card10').addClass('animated flipInX');
         document.getElementById("card10").src = heros[9];
         car10()
     });
 
-    $("#card11").click(function () {
+    $("#card11").click(function() {
         $('#card11').addClass('animated flipInX');
         document.getElementById("card11").src = heros[10];
         car11()
     });
 
-    $("#card12").click(function () {
+    $("#card12").click(function() {
         $('#card12').addClass('animated flipInX');
         document.getElementById("card12").src = heros[11];
         car12()
     });
 
-    $("#card13").click(function () {
+    $("#card13").click(function() {
         $('#card13').addClass('animated flipInX');
         document.getElementById("card13").src = heros[0];
         car13()
     });
 
-    $("#card14").click(function () {
+    $("#card14").click(function() {
         $('#card14').addClass('animated flipInX');
         document.getElementById("card14").src = heros[1];
         car14()
     });
 
-    $("#card15").click(function () {
+    $("#card15").click(function() {
         $('#card15').addClass('animated flipInX');
         document.getElementById("card15").src = heros[2];
         car15()
     });
 
-    $("#card16").click(function () {
+    $("#card16").click(function() {
         $('#card16').addClass('animated flipInX');
         document.getElementById("card16").src = heros[3];
         car16()
     });
 
-    $("#card17").click(function () {
+    $("#card17").click(function() {
         $('#card17').addClass('animated flipInX');
         document.getElementById("card17").src = heros[4];
         car17();
     });
 
-    $("#card18").click(function () {
+    $("#card18").click(function() {
         $('#card18').addClass('animated flipInX');
         document.getElementById("card18").src = heros[5];
         car18();
     });
 
-    $("#card19").click(function () {
+    $("#card19").click(function() {
         $('#card19').addClass('animated flipInX');
         document.getElementById("card19").src = heros[6];
         car19();
     });
 
-    $("#card20").click(function () {
+    $("#card20").click(function() {
         $('#card20').addClass('animated flipInX');
         document.getElementById("card20").src = heros[7];
         car20()
     });
 
-    $("#card21").click(function () {
+    $("#card21").click(function() {
         $('#card21').addClass('animated flipInX');
         document.getElementById("card21").src = heros[8];
         car21()
     });
 
-    $("#card22").click(function () {
+    $("#card22").click(function() {
         $('#card22').addClass('animated flipInX');
         document.getElementById("card22").src = heros[9];
         car22()
     });
 
-    $("#card23").click(function () {
+    $("#card23").click(function() {
         $('#card23').addClass('animated flipInX');
         document.getElementById("card23").src = heros[10];
         car23()
     });
 
-    $("#card24").click(function () {
+    $("#card24").click(function() {
         $('#card24').addClass('animated flipInX');
         document.getElementById("card24").src = heros[11];
         car24()
@@ -412,7 +430,7 @@ if (window.innerWidth > 992) {
 
 }
 // An event function set when the screen changes it's sizes
-document.getElementsByTagName("BODY")[0].onresize = function () {
+document.getElementsByTagName("BODY")[0].onresize = function() {
     resizeSmall()
 };
 // Function to show an alert message when the screen goes under 992 pixel's width an goes back above this width.
@@ -426,277 +444,326 @@ function resizeSmall() {
     }
 }
 // Funtion time when the player hit the first card start the timer
-if(showTimer = 1 ) {
+if (showTimer = 1) {
     sec = 'second'
 }
-$("#will1").click( function timer(){
-        timeCount += 1;
-    if(showTimer >=2) { sec = 'seconds'}
-        $("#contador").html(timeCount + ' '+sec);
-        showTimer = setTimeout(timer, 1000);
-    
-});
+$("#will1").one('click', (function timer() {
+    timeCount += 1;
+    if (showTimer >= 2) { sec = 'seconds' }
+    $("#contador").html(timeCount + ' ' + sec);
+    showTimer = setTimeout(timer, 1000);
+}));
 //functions to return if a pair of the cards is made.
-function car1 () {
+function car1() {
     count1 += 1;
     moves += 1;
     if (count1 >= 1 && count13 >= 1) {
-        $("#card1").removeClass( "flipInX" )
-        $("#card13").removeClass( "flipInX" )
+        $("#card1").removeClass("flipInX")
+        $("#card13").removeClass("flipInX")
         $("#card1").addClass("zoomIn");
         $("#card13").addClass("zoomIn");
     }
     return
 }
-function car2 () {
+
+function car2() {
     count2 += 1;
     moves += 1;
     if (count2 >= 1 && count14 >= 1) {
-        $("#card2").removeClass( "flipInX" )
-        $("#card14").removeClass( "flipInX" )
+        $("#card2").removeClass("flipInX")
+        $("#card14").removeClass("flipInX")
         $("#card2").addClass("zoomIn");
         $("#card14").addClass("zoomIn");
     }
     return
 }
-function car3 () {
+
+function car3() {
     count3 += 1;
     moves += 1;
     if (count3 >= 1 && count15 >= 1) {
-        $("#card3").removeClass( "flipInX" )
-        $("#card15").removeClass( "flipInX" )
+        $("#card3").removeClass("flipInX")
+        $("#card15").removeClass("flipInX")
         $("#card3").addClass("zoomIn");
         $("#card15").addClass("zoomIn");
     }
     return
 }
-function car4 () {
+
+function car4() {
     count4 += 1;
     moves += 1;
-    if (count4 >= 1 && count16 >=1) {
-        $("#card4").removeClass( "flipInX" )
-        $("#card16").removeClass( "flipInX" )
+    if (count4 >= 1 && count16 >= 1) {
+        $("#card4").removeClass("flipInX")
+        $("#card16").removeClass("flipInX")
         $("#card4").addClass("zoomIn");
         $("#card16").addClass("zoomIn");
     }
     return
 }
-function car5 () {
+
+function car5() {
     count5 += 1;
     moves += 1;
-    if (count5 >= 1 && count17 >=1) {
-        $("#card5").removeClass( "flipInX" )
-        $("#card17").removeClass( "flipInX" )
+    if (count5 >= 1 && count17 >= 1) {
+        $("#card5").removeClass("flipInX")
+        $("#card17").removeClass("flipInX")
         $("#card5").addClass("zoomIn");
         $("#card17").addClass("zoomIn");
     }
     return
 }
-function car6 () {
+
+function car6() {
     count6 += 1;
     moves += 1;
-    if (count6 >= 1 && count18 >=1) {
-        $("#card6").removeClass( "flipInX" )
-        $("#card18").removeClass( "flipInX" )
+    if (count6 >= 1 && count18 >= 1) {
+        $("#card6").removeClass("flipInX")
+        $("#card18").removeClass("flipInX")
         $("#card6").addClass("zoomIn");
         $("#card18").addClass("zoomIn");
     }
     return
 }
-function car7 () {
+
+function car7() {
     count7 += 1;
     moves += 1;
     if (count7 >= 1 && count19 >= 1) {
-        $("#card7").removeClass( "flipInX" )
-        $("#card19").removeClass( "flipInX" )
+        $("#card7").removeClass("flipInX")
+        $("#card19").removeClass("flipInX")
         $("#card7").addClass("zoomIn");
         $("#card19").addClass("zoomIn");
     }
     return
 }
-function car8 () {
+
+function car8() {
     count8 += 1;
     moves += 1;
     if (count8 >= 1 && count20 >= 1) {
-        $("#card8").removeClass( "flipInX" )
-        $("#card20").removeClass( "flipInX" )
+        $("#card8").removeClass("flipInX")
+        $("#card20").removeClass("flipInX")
         $("#card8").addClass("zoomIn");
         $("#card20").addClass("zoomIn");
     }
     return
 }
-function car9 () {
+
+function car9() {
     moves += 1;
     count9 += 1;
     if (count9 >= 1 && count21 >= 1) {
-        $("#card9").removeClass( "flipInX" )
-        $("#card21").removeClass( "flipInX" )
+        $("#card9").removeClass("flipInX")
+        $("#card21").removeClass("flipInX")
         $("#card9").addClass("zoomIn");
         $("#card21").addClass("zoomIn");
     }
     return
 }
-function car10 () {
+
+function car10() {
     moves += 1;
     count10 += 1;
     if (count10 >= 1 && count22 >= 1) {
-        $("#card10").removeClass( "flipInX" )
-        $("#card22").removeClass( "flipInX" )
+        $("#card10").removeClass("flipInX")
+        $("#card22").removeClass("flipInX")
         $("#card10").addClass("zoomIn");
         $("#card22").addClass("zoomIn");
     }
     return
 }
-function car11 () {
+
+function car11() {
     count11 += 1;
     moves += 1;
     if (count11 >= 1 && count23 >= 1) {
-        $("#card11").removeClass( "flipInX" )
-        $("#card23").removeClass( "flipInX" )
+        $("#card11").removeClass("flipInX")
+        $("#card23").removeClass("flipInX")
         $("#card11").addClass("zoomIn");
         $("#card23").addClass("zoomIn");
     }
     return
 }
-function car12 () {
+
+function car12() {
     count12 += 1;
     moves += 1;
     if (count12 >= 1 && count24 >= 1) {
-        $("#card12").removeClass( "flipInX" )
-        $("#card24").removeClass( "flipInX" )
+        $("#card12").removeClass("flipInX")
+        $("#card24").removeClass("flipInX")
         $("#card12").addClass("zoomIn");
         $("#card24").addClass("zoomIn");
     }
     return
 }
-function car13 () {
-    count13+= 1;
+
+function car13() {
+    count13 += 1;
     moves += 1;
     if (count1 >= 1 && count13 >= 1) {
-        $("#card1").removeClass( "flipInX" )
-        $("#card13").removeClass( "flipInX" )
+        $("#card1").removeClass("flipInX")
+        $("#card13").removeClass("flipInX")
         $("#card1").addClass("zoomIn");
         $("#card13").addClass("zoomIn");
     }
     return
 }
-function car14 () {
+
+function car14() {
     moves += 1;
-    count14+= 1;
-        if (count2 >= 1 && count14 >= 1) {
-        $("#card2").removeClass( "flipInX" )
-        $("#card14").removeClass( "flipInX" )
+    count14 += 1;
+    if (count2 >= 1 && count14 >= 1) {
+        $("#card2").removeClass("flipInX")
+        $("#card14").removeClass("flipInX")
         $("#card2").addClass("zoomIn");
         $("#card14").addClass("zoomIn");
     }
-    return    
+    return
 }
-function car15 () {
-    count15 +=1;    
+
+function car15() {
+    count15 += 1;
     moves += 1;
     if (count3 >= 1 && count15 >= 1) {
-        $("#card3").removeClass( "flipInX" )
-        $("#card15").removeClass( "flipInX" )
+        $("#card3").removeClass("flipInX")
+        $("#card15").removeClass("flipInX")
         $("#card3").addClass("zoomIn");
         $("#card15").addClass("zoomIn");
     }
     return
 }
-function car16 () {
+
+function car16() {
     moves += 1;
     count16 += 1;
-    if (count4 >= 1 && count16 >=1) {
-        $("#card4").removeClass( "flipInX" )
-        $("#card16").removeClass( "flipInX" )
+    if (count4 >= 1 && count16 >= 1) {
+        $("#card4").removeClass("flipInX")
+        $("#card16").removeClass("flipInX")
         $("#card4").addClass("zoomIn");
         $("#card16").addClass("zoomIn");
     }
     return
 }
-function car17 () {
+
+function car17() {
     count17 += 1;
     moves += 1;
-    if (count5 >= 1 && count17 >=1) {
-        $("#card5").removeClass( "flipInX" )
-        $("#card17").removeClass( "flipInX" )
+    if (count5 >= 1 && count17 >= 1) {
+        $("#card5").removeClass("flipInX")
+        $("#card17").removeClass("flipInX")
         $("#card5").addClass("zoomIn");
         $("#card17").addClass("zoomIn");
     }
     return
 }
-function car18 () {
+
+function car18() {
     moves += 1;
     count18 += 1;
-    if (count6 >= 1 && count18 >=1) {
-        $("#card6").removeClass( "flipInX" )
-        $("#card18").removeClass( "flipInX" )
+    if (count6 >= 1 && count18 >= 1) {
+        $("#card6").removeClass("flipInX")
+        $("#card18").removeClass("flipInX")
         $("#card6").addClass("zoomIn");
         $("#card18").addClass("zoomIn");
     }
     return
 }
-function car19 () {
+
+function car19() {
     count19 += 1;
     moves += 1;
     if (count7 >= 1 && count19 >= 1) {
-        $("#card7").removeClass( "flipInX" )
-        $("#card19").removeClass( "flipInX" )
+        $("#card7").removeClass("flipInX")
+        $("#card19").removeClass("flipInX")
         $("#card7").addClass("zoomIn");
         $("#card19").addClass("zoomIn");
     }
     return
 }
-function car20 () {
+
+function car20() {
     count20 += 1;
     moves += 1;
-     if (count8 >= 1 && count20 >= 1) {
-        $("#card8").removeClass( "flipInX" )
-        $("#card20").removeClass( "flipInX" )
+    if (count8 >= 1 && count20 >= 1) {
+        $("#card8").removeClass("flipInX")
+        $("#card20").removeClass("flipInX")
         $("#card8").addClass("zoomIn");
         $("#card20").addClass("zoomIn");
     }
     return
 }
-function car21 () {
+
+function car21() {
     count21 += 1;
     moves += 1;
     if (count9 >= 1 && count21 >= 1) {
-        $("#card9").removeClass( "flipInX" )
-        $("#card21").removeClass( "flipInX" )
+        $("#card9").removeClass("flipInX")
+        $("#card21").removeClass("flipInX")
         $("#card9").addClass("zoomIn");
         $("#card21").addClass("zoomIn");
     }
     return
 }
-function car22 () {
+
+function car22() {
     count22 += 1;
     moves += 1;
     if (count10 >= 1 && count22 >= 1) {
-        $("#card10").removeClass( "flipInX" )
-        $("#card22").removeClass( "flipInX" )
+        $("#card10").removeClass("flipInX")
+        $("#card22").removeClass("flipInX")
         $("#card10").addClass("zoomIn");
         $("#card22").addClass("zoomIn");
     }
     return
 }
-function car23 () {
+
+function car23() {
     count23 += 1;
     moves += 1;
     if (count11 >= 1 && count23 >= 1) {
-        $("#card11").removeClass( "flipInX" )
-        $("#card23").removeClass( "flipInX" )
+        $("#card11").removeClass("flipInX")
+        $("#card23").removeClass("flipInX")
         $("#card11").addClass("zoomIn");
         $("#card23").addClass("zoomIn");
     }
     return
 }
-function car24 () {
+
+function car24() {
     count24 += 1;
     moves += 1;
     if (count12 >= 1 && count24 >= 1) {
-        $("#card12").removeClass( "flipInX" )
-        $("#card24").removeClass( "flipInX" )
+        $("#card12").removeClass("flipInX")
+        $("#card24").removeClass("flipInX")
         $("#card12").addClass("zoomIn");
         $("#card24").addClass("zoomIn");
     }
 }
+$('#will1').click(function() {
+    $('#moves').html(moves)
+});
+$('#will1').click(function() {
+    if (moves == 25) {
+        $('#3star').removeClass('fa-star');
+        $('#3star').addClass('fa-star-o');
+        countingStars += 1;
+        return
+
+    }
+    if (moves == 32) {
+        $('#2star').removeClass('fa-star');
+        $('#2star').addClass('fa-star-o');
+        countingStars += 1;
+        return
+    }
+    if (moves == 40) {
+        $('#1star').removeClass('fa-star');
+        $('#1star').addClass('fa-star-o');
+        countingStars += 1;
+        return
+    }
+    if (countingStars >= 3) {
+        alert('you lose!!!')
+    }
+})
