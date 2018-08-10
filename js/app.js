@@ -60,9 +60,12 @@
     }
     // Set var heros to suffle
     heros = shuffle(heros);
-    // An event function to reset the game
+    // Two events function to reset the game
     $("#fresh").click(function() {
         $('#fresh').addClass('fa-spin');
+        location.reload();
+    });
+    $("#resetGame").click(function() {
         location.reload();
     });
     // An if to set the deck when the screen is under 992 pixel's width.
@@ -875,7 +878,7 @@
             countToWin += 1;
 
             if (window.innerWidth > 992) {
-                if (countToWin == 12) {
+                if (countToWin == 1) {
                     $("#welcomeTitle").text('Congratulations');
                     $(".modal-body").text('You won the williams memory game match in ' + timeCount + ' seconds and ' + (3 - countingStars) + ' of rating stars');
                     $('#modal').modal('show');
