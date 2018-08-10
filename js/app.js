@@ -372,10 +372,6 @@
                 countingStars += 1;
                 return;
             }
-            // an alert that will be displayed when the player set all the cards pairs  
-            if (countToWin === 8) {
-                alert('Congatulations you won the williams memory game match in ' + timeCount + ' seconds and ' + (3 - countingStars) + ' stars');
-            }
 
         });
 
@@ -821,7 +817,6 @@
                 countingStars += 1;
                 return;
             }
-            // an alert that will be displayed when the player set all the cards pairs
 
         });
 
@@ -879,11 +874,22 @@
             }, 1700);
             countToWin += 1;
 
-            if (countToWin == 1) {
-                $("#welcomeTitle").text('Congratulations');
-                $(".modal-body").text('You won the williams memory game match in ' + timeCount + ' seconds and ' + (3 - countingStars) + ' of rating stars');
-                $('#modal').modal('show');
-                $('#contador').removeAttr('id');
+            if (window.innerWidth > 992) {
+                if (countToWin == 12) {
+                    $("#welcomeTitle").text('Congratulations');
+                    $(".modal-body").text('You won the williams memory game match in ' + timeCount + ' seconds and ' + (3 - countingStars) + ' of rating stars');
+                    $('#modal').modal('show');
+                    $('#contador').removeAttr('id');
+                }
+            }
+
+            if (window.innerWidth < 992) {
+                if (countToWin == 8) {
+                    $("#welcomeTitle").text('Congratulations');
+                    $(".modal-body").text('You won the williams memory game match in ' + timeCount + ' seconds and ' + (3 - countingStars) + ' of rating stars');
+                    $('#modal').modal('show');
+                    $('#contador').removeAttr('id');
+                }
             }
 
             return;
