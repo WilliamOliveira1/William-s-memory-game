@@ -3,16 +3,18 @@
     var showTimer;
     var countToWin = 0;
     var moves = 0;
-    var solvedCount = 0;
     var countingStars = 0;
-    var card0 = 'img/shield.jpg'
+    var card0 = 'img/shield.jpg';
     var checkMatch = [];
     var checkMatchClass = [];
     var checkMatchId = [];
     var checkMatchLose = [];
+    var sec;
+    var i;
 
     // Array with heros card's image path. 
-    var heros = ['img/hero/america.png',
+    var heros = [
+        'img/hero/america.png',
         'img/hero/arqueiro.jpg',
         'img/hero/capMarvel.jpg',
         'img/hero/coisa.jpg',
@@ -29,6 +31,11 @@
         'img/hero/thor.jpg',
         'img/hero/tocha.jpg'
     ];
+
+    //Show a modal when the page loads
+    $(document).ready(function() {
+        $('#startModal').modal('show');
+    });
 
     // Shuffle function from http://stackoverflow.com/a/2450976
     function shuffle(array) {
@@ -96,7 +103,24 @@
             rand = randoms();
         }
         // array to store variables that will be in the id of the each cards
-        var functions1 = ['card1', 'card2', 'card3', 'card4', 'card7', 'card8', 'card9', 'card10', 'card13', 'card14', 'card15', 'card16', 'card19', 'card20', 'card21', 'card22'];
+        var functions1 = [
+            'card1',
+            'card2',
+            'card3',
+            'card4',
+            'card7',
+            'card8',
+            'card9',
+            'card10',
+            'card13',
+            'card14',
+            'card15',
+            'card16',
+            'card19',
+            'card20',
+            'card21',
+            'card22'
+        ];
         // store the variables in the img tag
         document.getElementsByTagName("img")[0].setAttribute("id", functions1[result1[0]]);
         document.getElementsByTagName("img")[1].setAttribute("id", functions1[result1[1]]);
@@ -331,7 +355,7 @@
                 $('#3star').removeClass('fa-star');
                 $('#3star').addClass('fa-star-o');
                 countingStars += 1;
-                return
+                return;
 
             }
 
@@ -339,14 +363,14 @@
                 $('#2star').removeClass('fa-star');
                 $('#2star').addClass('fa-star-o');
                 countingStars += 1;
-                return
+                return;
             }
 
             if (moves == 51) {
                 $('#1star').removeClass('fa-star');
                 $('#1star').addClass('fa-star-o');
                 countingStars += 1;
-                return
+                return;
             }
             // an alert that will be displayed when the player set all the cards pairs  
             if (countToWin === 8) {
@@ -385,7 +409,32 @@
             rand = randoms();
         }
         // array to store variables that will be in the id of the each cards
-        var functions = ['card1', 'card2', 'card3', 'card4', 'card5', 'card6', 'card7', 'card8', 'card9', 'card10', 'card11', 'card12', 'card13', 'card14', 'card15', 'card16', 'card17', 'card18', 'card19', 'card20', 'card21', 'card22', 'card23', 'card24'];
+        var functions = [
+            'card1',
+            'card2',
+            'card3',
+            'card4',
+            'card5',
+            'card6',
+            'card7',
+            'card8',
+            'card9',
+            'card10',
+            'card11',
+            'card12',
+            'card13',
+            'card14',
+            'card15',
+            'card16',
+            'card17',
+            'card18',
+            'card19',
+            'card20',
+            'card21',
+            'card22',
+            'card23',
+            'card24'
+        ];
         // store the variables in the img tag
         document.getElementsByTagName("img")[0].setAttribute("id", functions[result[0]]);
         document.getElementsByTagName("img")[1].setAttribute("id", functions[result[1]]);
@@ -423,7 +472,7 @@
             setTimeout(function() {
                 $('#card1').removeClass('flipInX');
             }, 1100);
-            return
+            return;
         });
 
         $("#card2").click(function() {
@@ -437,7 +486,7 @@
             setTimeout(function() {
                 $('#card2').removeClass('flipInX');
             }, 1100);
-            return
+            return;
         });
 
         $("#card3").click(function() {
@@ -451,7 +500,7 @@
             setTimeout(function() {
                 $('#card3').removeClass('flipInX');
             }, 1100);
-            return
+            return;
         });
 
         $("#card4").click(function() {
@@ -465,7 +514,7 @@
             setTimeout(function() {
                 $('#card4').removeClass('flipInX');
             }, 1100);
-            return
+            return;
         });
 
         $("#card5").click(function() {
@@ -479,7 +528,7 @@
             setTimeout(function() {
                 $('#card5').removeClass('flipInX');
             }, 1100);
-            return
+            return;
         });
 
         $("#card6").click(function() {
@@ -494,7 +543,7 @@
             setTimeout(function() {
                 $('#card6').removeClass('flipInX');
             }, 1100);
-            return
+            return;
         });
 
         $("#card7").click(function() {
@@ -508,7 +557,7 @@
             setTimeout(function() {
                 $('#card7').removeClass('flipInX');
             }, 1100);
-            return
+            return;
         });
 
         $("#card8").click(function() {
@@ -522,7 +571,7 @@
             setTimeout(function() {
                 $('#card8').removeClass('flipInX');
             }, 1100);
-            return
+            return;
         });
 
         $("#card9").click(function() {
@@ -536,7 +585,7 @@
             setTimeout(function() {
                 $('#card9').removeClass('flipInX');
             }, 1100);
-            return
+            return;
         });
 
         $("#card10").click(function() {
@@ -550,7 +599,7 @@
             setTimeout(function() {
                 $('#card10').removeClass('flipInX');
             }, 1100);
-            return
+            return;
         });
 
         $("#card11").click(function() {
@@ -564,7 +613,7 @@
             setTimeout(function() {
                 $('#card11').removeClass('flipInX');
             }, 1100);
-            return
+            return;
         });
 
         $("#card12").click(function() {
@@ -578,7 +627,7 @@
             setTimeout(function() {
                 $('#card12').removeClass('flipInX');
             }, 1100);
-            return
+            return;
         });
 
         $("#card13").click(function() {
@@ -592,7 +641,7 @@
             setTimeout(function() {
                 $('#card13').removeClass('flipInX');
             }, 1100);
-            return
+            return;
         });
 
         $("#card14").click(function() {
@@ -606,7 +655,7 @@
             setTimeout(function() {
                 $('#card14').removeClass('flipInX');
             }, 1100);
-            return
+            return;
         });
 
         $("#card15").click(function() {
@@ -620,7 +669,7 @@
             setTimeout(function() {
                 $('#card15').removeClass('flipInX');
             }, 1100);
-            return
+            return;
         });
 
         $("#card16").click(function() {
@@ -634,7 +683,7 @@
             setTimeout(function() {
                 $('#card16').removeClass('flipInX');
             }, 1100);
-            return
+            return;
         });
 
         $("#card17").click(function() {
@@ -648,7 +697,7 @@
             setTimeout(function() {
                 $('#card17').removeClass('flipInX');
             }, 1100);
-            return
+            return;
         });
 
         $("#card18").click(function() {
@@ -662,7 +711,7 @@
             setTimeout(function() {
                 $('#card18').removeClass('flipInX');
             }, 1100);
-            return
+            return;
         });
 
         $("#card19").click(function() {
@@ -676,7 +725,7 @@
             setTimeout(function() {
                 $('#card19').removeClass('flipInX');
             }, 1100);
-            return
+            return;
         });
 
         $("#card20").click(function() {
@@ -690,7 +739,7 @@
             setTimeout(function() {
                 $('#card20').removeClass('flipInX');
             }, 1100);
-            return
+            return;
         });
 
         $("#card21").click(function() {
@@ -704,7 +753,7 @@
             setTimeout(function() {
                 $('#card21').removeClass('flipInX');
             }, 1100);
-            return
+            return;
         });
 
         $("#card22").click(function() {
@@ -718,7 +767,7 @@
             setTimeout(function() {
                 $('#card22').removeClass('flipInX');
             }, 1100);
-            return
+            return;
         });
 
         $("#card23").click(function() {
@@ -732,7 +781,7 @@
             setTimeout(function() {
                 $('#card23').removeClass('flipInX');
             }, 1100);
-            return
+            return;
         });
 
         $("#card24").click(function() {
@@ -746,7 +795,7 @@
             setTimeout(function() {
                 $('#card24').removeClass('flipInX');
             }, 1100);
-            return
+            return;
         });
         // function that when click on the body will set the conditional statement to decrease the stars rating
         $('#will1').click(function starsDecresing() {
@@ -755,7 +804,7 @@
                 $('#3star').removeClass('fa-star');
                 $('#3star').addClass('fa-star-o');
                 countingStars += 1;
-                return
+                return;
 
             }
 
@@ -763,26 +812,23 @@
                 $('#2star').removeClass('fa-star');
                 $('#2star').addClass('fa-star-o');
                 countingStars += 1;
-                return
+                return;
             }
 
             if (moves == 75) {
                 $('#1star').removeClass('fa-star');
                 $('#1star').addClass('fa-star-o');
                 countingStars += 1;
-                return
+                return;
             }
             // an alert that will be displayed when the player set all the cards pairs
-            if (countToWin === 12) {
-                alert('Congratulations you won the williams memory game match in ' + timeCount + ' seconds and ' + (3 - countingStars) + ' stars');
-            }
 
         });
 
     }
     // An event function set when the scre  en changes it's sizes
     document.getElementsByTagName("BODY")[0].onresize = function() {
-        resizeSmall()
+        resizeSmall();
     };
     // Function to show an alert message when the screen goes under 992 pixel's width an goes back above this width.
     function resizeSmall() {
@@ -791,31 +837,31 @@
             i = 1;
 
         } else if (window.innerWidth > 992 && i == 1) {
-            alert("Reset the game for a full deck of cards")
+            alert("Reset the game for a full deck of cards");
         }
     }
 
     // Funtion time when the player hit the first card start the timer
     if (showTimer = 1) {
-        sec = 'second'
+        sec = 'second';
     }
     $("#will1").one('click', (function timer() {
         timeCount += 1;
-        if (showTimer >= 2) { sec = 'seconds' }
+        if (showTimer >= 2) { sec = 'seconds'; }
         $("#contador").html(timeCount + ' ' + sec);
-        showTimer = setTimeout(timer, 1100);
+        showTimer = setTimeout(timer, 1000);
     }));
 
     //functions to return if a pair of the cards is made or not.
 
     $('#will1').click(function memory() {
-        $('#moves').html(moves)
-        let pos1 = checkMatchId[0];
-        let pos2 = checkMatchId[1];
-        let pos3 = checkMatchClass[0];
-        let pos4 = checkMatchClass[1];
+        $('#moves').html(moves);
+        var pos1 = checkMatchId[0];
+        var pos2 = checkMatchId[1];
+        var pos3 = checkMatchClass[0];
+        var pos4 = checkMatchClass[1];
         if (checkMatchLose[0] % checkMatchLose[1] == 0) {
-            $(pos4).addClass('tada')
+            $(pos4).addClass('tada');
             checkMatchClass.splice(0, 1);
             checkMatchClass.splice(0, 1);
             checkMatchId.splice(0, 1);
@@ -825,14 +871,22 @@
             checkMatchLose.splice(0, 1);
             checkMatchLose.splice(0, 1);
             setTimeout(function() {
-                $(pos3).addClass('tada')
+                $(pos3).addClass('tada');
             }, 1000);
             setTimeout(function() {
                 $(pos3).removeAttr('id');
                 $(pos4).removeAttr('id');
             }, 1700);
             countToWin += 1;
-            return
+
+            if (countToWin == 1) {
+                $("#welcomeTitle").text('Congratulations');
+                $(".modal-body").text('You won the williams memory game match in ' + timeCount + ' seconds and ' + (3 - countingStars) + ' of rating stars');
+                $('#modal').modal('show');
+                $('#contador').removeAttr('id');
+            }
+
+            return;
         }
         if (checkMatchClass.length == 2) {
 
@@ -856,18 +910,18 @@
                 }, 1600);
 
                 setTimeout(function() {
-                    $(pos4).addClass('flipOutX')
-                    $(pos3).addClass('flipOutX')
+                    $(pos4).addClass('flipOutX');
+                    $(pos3).addClass('flipOutX');
                     document.getElementById(pos2).src = card0;
                     document.getElementById(pos1).src = card0;
                 }, 1700);
 
                 setTimeout(function() {
-                    $(pos4).removeClass('flipOutX')
-                    $(pos3).removeClass('flipOutX')
+                    $(pos4).removeClass('flipOutX');
+                    $(pos3).removeClass('flipOutX');
                 }, 2000);
 
-                return memory
+                return memory;
 
             }
         }
