@@ -58,7 +58,7 @@
 
         return array;
     }
-    // Set var heros to suffle
+    // Set var heros to shuffle
     heros = shuffle(heros);
     // Two events function to reset the game
     $("#fresh").click(function() {
@@ -68,7 +68,7 @@
     $("#resetGame").click(function() {
         location.reload();
     });
-    // An if to set the deck when the screen is under 992 pixel's width.
+    // An if statement to set the deck when the screen is under 992 pixel's width.
     if (window.innerWidth < 992) {
 
         $("#5").remove();
@@ -105,42 +105,14 @@
             result1.push(rand);
             rand = randoms();
         }
-        // array to store variables that will be in the id of the each cards
-        var functions1 = [
-            'card1',
-            'card2',
-            'card3',
-            'card4',
-            'card7',
-            'card8',
-            'card9',
-            'card10',
-            'card13',
-            'card14',
-            'card15',
-            'card16',
-            'card19',
-            'card20',
-            'card21',
-            'card22'
-        ];
-        // store the variables in the img tag
-        document.getElementsByTagName("img")[0].setAttribute("id", functions1[result1[0]]);
-        document.getElementsByTagName("img")[1].setAttribute("id", functions1[result1[1]]);
-        document.getElementsByTagName("img")[2].setAttribute("id", functions1[result1[2]]);
-        document.getElementsByTagName("img")[3].setAttribute("id", functions1[result1[3]]);
-        document.getElementsByTagName("img")[4].setAttribute("id", functions1[result1[4]]);
-        document.getElementsByTagName("img")[5].setAttribute("id", functions1[result1[5]]);
-        document.getElementsByTagName("img")[6].setAttribute("id", functions1[result1[6]]);
-        document.getElementsByTagName("img")[7].setAttribute("id", functions1[result1[7]]);
-        document.getElementsByTagName("img")[8].setAttribute("id", functions1[result1[8]]);
-        document.getElementsByTagName("img")[9].setAttribute("id", functions1[result1[9]]);
-        document.getElementsByTagName("img")[10].setAttribute("id", functions1[result1[10]]);
-        document.getElementsByTagName("img")[11].setAttribute("id", functions1[result1[11]]);
-        document.getElementsByTagName("img")[12].setAttribute("id", functions1[result1[12]]);
-        document.getElementsByTagName("img")[13].setAttribute("id", functions1[result1[13]]);
-        document.getElementsByTagName("img")[14].setAttribute("id", functions1[result1[14]]);
-        document.getElementsByTagName("img")[15].setAttribute("id", functions1[result1[15]]);
+        // array to store variables that will be in the id of the each cards and store the variables in the img tag
+        let functions1 = [];
+        for(a = 0; a < 25; a++) {
+            functions1.push('card'+a)
+            for(z = 0; z < 16; z++) {
+                document.getElementsByTagName("img")[z].setAttribute("id", functions1[result1[z]]);        
+            }            
+        }
 
         // functions that will trigger the cards
 
@@ -408,58 +380,17 @@
             rand = randoms();
         }
         // array to store variables that will be in the id of the each cards
-        var functions = [
-            'card1',
-            'card2',
-            'card3',
-            'card4',
-            'card5',
-            'card6',
-            'card7',
-            'card8',
-            'card9',
-            'card10',
-            'card11',
-            'card12',
-            'card13',
-            'card14',
-            'card15',
-            'card16',
-            'card17',
-            'card18',
-            'card19',
-            'card20',
-            'card21',
-            'card22',
-            'card23',
-            'card24'
-        ];
-        // store the variables in the img tag
-        document.getElementsByTagName("img")[0].setAttribute("id", functions[result[0]]);
-        document.getElementsByTagName("img")[1].setAttribute("id", functions[result[1]]);
-        document.getElementsByTagName("img")[2].setAttribute("id", functions[result[2]]);
-        document.getElementsByTagName("img")[3].setAttribute("id", functions[result[3]]);
-        document.getElementsByTagName("img")[4].setAttribute("id", functions[result[4]]);
-        document.getElementsByTagName("img")[5].setAttribute("id", functions[result[5]]);
-        document.getElementsByTagName("img")[6].setAttribute("id", functions[result[6]]);
-        document.getElementsByTagName("img")[7].setAttribute("id", functions[result[7]]);
-        document.getElementsByTagName("img")[8].setAttribute("id", functions[result[8]]);
-        document.getElementsByTagName("img")[9].setAttribute("id", functions[result[9]]);
-        document.getElementsByTagName("img")[10].setAttribute("id", functions[result[10]]);
-        document.getElementsByTagName("img")[11].setAttribute("id", functions[result[11]]);
-        document.getElementsByTagName("img")[12].setAttribute("id", functions[result[12]]);
-        document.getElementsByTagName("img")[13].setAttribute("id", functions[result[13]]);
-        document.getElementsByTagName("img")[14].setAttribute("id", functions[result[14]]);
-        document.getElementsByTagName("img")[15].setAttribute("id", functions[result[15]]);
-        document.getElementsByTagName("img")[16].setAttribute("id", functions[result[16]]);
-        document.getElementsByTagName("img")[17].setAttribute("id", functions[result[17]]);
-        document.getElementsByTagName("img")[18].setAttribute("id", functions[result[18]]);
-        document.getElementsByTagName("img")[19].setAttribute("id", functions[result[19]]);
-        document.getElementsByTagName("img")[20].setAttribute("id", functions[result[20]]);
-        document.getElementsByTagName("img")[21].setAttribute("id", functions[result[21]]);
-        document.getElementsByTagName("img")[22].setAttribute("id", functions[result[22]]);
-        document.getElementsByTagName("img")[23].setAttribute("id", functions[result[23]]);
+        let functions = [];
+        for(y = 0; y < 25; y++) {
+            functions.push('card'+y)
+            for(i = 0; i < 24; i++) {
+                document.getElementsByTagName("img")[i].setAttribute("id", functions[result[i]]);
+            }
+            
+        }
+    
         // functions that will trigger the cards
+
         $("#card1").click(function() {
             $('#card1').addClass('animated flipInX');
             document.getElementById("card1").src = heros[0];
@@ -470,7 +401,7 @@
             checkMatchLose.push(3);
             setTimeout(function() {
                 $('#card1').removeClass('flipInX');
-            }, 1100);
+            }, 1100);           
             return;
         });
 
@@ -799,7 +730,7 @@
         // function that when click on the body will set the conditional statement to decrease the stars rating
         $('#will1').click(function starsDecresing() {
 
-            if (moves == 25) {
+            if (moves == 35) {
                 $('#3star').removeClass('fa-star');
                 $('#3star').addClass('fa-star-o');
                 countingStars += 1;
@@ -824,7 +755,7 @@
         });
 
     }
-    // An event function set when the scre  en changes it's sizes
+    // An event function set when the screnn changes it's sizes
     document.getElementsByTagName("BODY")[0].onresize = function() {
         resizeSmall();
     };
@@ -832,9 +763,9 @@
     function resizeSmall() {
 
         if (window.innerWidth < 992) {
-            i = 1;
+            resizeWindow = true;
 
-        } else if (window.innerWidth > 992 && i == 1) {
+        } else if (window.innerWidth > 992 && resizeWindow == true) {
             alert("Reset the game for a full deck of cards");
         }
     }
