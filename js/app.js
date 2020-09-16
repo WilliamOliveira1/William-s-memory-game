@@ -41,25 +41,19 @@
     function shuffle(array) {
         var currentIndex = array.length,
             temporaryValue, x;
-
         while (0 !== currentIndex) {
-
             x = Math.floor(Math.random() * currentIndex);
-
             currentIndex -= 1;
-
             temporaryValue = array[currentIndex];
-
             array[currentIndex] = array[x];
-
             array[x] = temporaryValue;
-
         }
-
         return array;
     }
+
     // Set var heros to shuffle
     heros = shuffle(heros);
+    
     // Two events function to reset the game
     $("#fresh").click(function() {
         $('#fresh').addClass('fa-spin');
@@ -107,7 +101,7 @@
         }
         // array to store variables that will be in the id of the each cards and store the variables in the img tag
         let functions1 = [];
-        for(a = 0; a < 25; a++) {
+        for(a = 1; a < 26; a++) {
             functions1.push('card'+a)
             for(z = 0; z < 16; z++) {
                 document.getElementsByTagName("img")[z].setAttribute("id", functions1[result1[z]]);        
@@ -358,7 +352,7 @@
         function randomNumbers(max) {
             function range(upTo) {
                 var result = [];
-                for (var i = 0; i < upTo; i++) result.push(i);
+                for (var i = 1; i < upTo; i++) result.push(i);
                 return result;
             }
 
@@ -381,9 +375,9 @@
         }
         // array to store variables that will be in the id of the each cards
         let functions = [];
-        for(y = 0; y < 25; y++) {
+        for(y = 1; y < 26; y++) {
             functions.push('card'+y)
-            for(i = 0; i < 24; i++) {
+            for(i = 0; i < 16; i++) {
                 document.getElementsByTagName("img")[i].setAttribute("id", functions[result[i]]);
             }
             
@@ -755,7 +749,7 @@
         });
 
     }
-    // An event function set when the screnn changes it's sizes
+    // An event function set when the screen changes it's sizes
     document.getElementsByTagName("BODY")[0].onresize = function() {
         resizeSmall();
     };
