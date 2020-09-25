@@ -11,6 +11,24 @@
     var checkMatchLose = [];
     var sec;
     var i;
+    var avoidOne = 1;
+    var avoidOne1 = 1;
+    var avoidOne2 = 1;
+    var avoidOne3 = 1;
+    var avoidOne4 = 1;
+    var avoidOne5 = 1;
+    var avoidOne6 = 1;
+    var avoidOne7 = 1;
+    var avoidOne8 = 1;
+    var avoidOne9 = 1;
+    var avoidOne10 = 1;
+    var avoidOne11 = 1;
+    var avoidOne12 = 1;
+    var avoidOne13 = 1;
+    var avoidOne14 = 1;
+    var avoidOne15 = 1;
+    var avoidOne16 = 1;
+
 
     // Array with heros card's image path. 
     var heros = [
@@ -33,9 +51,10 @@
     ];
 
     //Show a modal when the page loads
-    $(document).ready(function() {
+     /*$(document).ready(function() {
         $('#startModal').modal('show');
     });
+    */
 
     // Shuffle function from http://stackoverflow.com/a/2450976
     function shuffle(array) {
@@ -100,223 +119,289 @@
             rand = randoms();
         }
         // array to store variables that will be in the id of the each cards and store the variables in the img tag
-        let functions1 = [];
-        for(a = 1; a < 26; a++) {
+        var functions1 = [];
+        for(var a = 1; a < 26; a++) {
             functions1.push('card'+a)
-            for(z = 0; z < 16; z++) {
+            for(var z = 0; z < 16; z++) {
                 document.getElementsByTagName("img")[z].setAttribute("id", functions1[result1[z]]);        
             }            
         }
 
         // functions that will trigger the cards
 
-        $("#card1").click(function() {
-            $('#card1').addClass('animated flipInX');
-            document.getElementById("card1").src = heros[0];
-            moves += 1;
-            checkMatch.push(1);
-            checkMatchClass.push('#card1');
-            checkMatchId.push('card1');
-            checkMatchLose.push(3);
-            setTimeout(function() {
-                $('#card1').removeClass('flipInX');
-            }, 1100);
-        });
-
-        $("#card2").click(function() {
-            $('#card2').addClass('animated flipInX');
-            document.getElementById("card2").src = heros[1];
-            moves += 1;
-            checkMatch.push(1);
-            checkMatchClass.push('#card2');
-            checkMatchId.push('card2');
-            checkMatchLose.push(5);
-            setTimeout(function() {
-                $('#card2').removeClass('flipInX');
-            }, 1100);
-        });
-
-        $("#card3").click(function() {
-            $('#card3').addClass('animated flipInX');
-            document.getElementById("card3").src = heros[2];
-            moves += 1;
-            checkMatch.push(1);
-            checkMatchClass.push('#card3');
-            checkMatchId.push('card3');
-            checkMatchLose.push(7);
-            setTimeout(function() {
-                $('#card3').removeClass('flipInX');
-            }, 1100);
+        $("#card12").click(function() {
+            if(avoidOne == 1 & avoidOne12 == 1) {
+                $('#card12').addClass('animated flipInX');
+                document.getElementById("card12").src = heros[10];
+                moves += 1;
+                checkMatch.push(1);
+                checkMatchClass.push('#card12');
+                checkMatchId.push('card12');
+                checkMatchLose.push(2);
+                setTimeout(function() {
+                    $('#card12').removeClass('flipInX');
+                }, 1100);
+            }
+            console.log(avoidOne);
+            avoidOne12 = 0;
         });
 
         $("#card4").click(function() {
-            $('#card4').addClass('animated flipInX');
-            document.getElementById("card4").src = heros[3];
-            moves += 1;
-            checkMatch.push(1);
-            checkMatchClass.push('#card4');
-            checkMatchId.push('card4');
-            checkMatchLose.push(11);
-            setTimeout(function() {
-                $('#card4').removeClass('flipInX');
-            }, 1100);
+            if(avoidOne == 1 & avoidOne4 == 1) {
+                $('#card4').addClass('animated flipInX');
+                document.getElementById("card4").src = heros[10];
+                moves += 1;
+                checkMatch.push(1);
+                checkMatchClass.push('#card4');
+                checkMatchId.push('card4');
+                checkMatchLose.push(2);
+                setTimeout(function() {
+                    $('#card4').removeClass('flipInX');
+                }, 1100);
+            }
+            console.log(avoidOne);
+            avoidOne4 = 0;
+        });
+
+        $("#card5").click(function() {
+            if(avoidOne == 1 & avoidOne5 == 1) {
+                $('#card5').addClass('animated flipInX');
+                document.getElementById("card5").src = heros[4];
+                moves += 1;
+                checkMatch.push(1);
+                checkMatchClass.push('#card5');
+                checkMatchId.push('card5');
+                checkMatchLose.push(3);
+                setTimeout(function() {
+                    $('#card5').removeClass('flipInX');
+                }, 1100);
+            }
+            console.log(avoidOne);
+            avoidOne5 = 0;
         });
 
         $("#card7").click(function() {
-            $('#card7').addClass('animated flipInX');
-            document.getElementById("card7").src = heros[4];
-            moves += 1;
-            checkMatch.push(1);
-            checkMatchClass.push('#card7');
-            checkMatchId.push('card7');
-            checkMatchLose.push(13);
-            setTimeout(function() {
-                $('#card7').removeClass('flipInX');
-            }, 1100);
+            if (avoidOne == 1 & avoidOne7 == 1) {
+                $('#card7').addClass('animated flipInX');
+                document.getElementById("card7").src = heros[4];
+                moves += 1;
+                checkMatch.push(1);
+                checkMatchClass.push('#card7');
+                checkMatchId.push('card7');
+                checkMatchLose.push(3);
+                setTimeout(function() {
+                    $('#card7').removeClass('flipInX');
+                }, 1100);
+            }
+            console.log(avoidOne);
+            avoidOne7 = 0;
         });
 
         $("#card8").click(function() {
-            $('#card8').addClass('animated flipInX');
-            document.getElementById("card8").src = heros[5];
-            moves += 1;
-            checkMatch.push(1);
-            checkMatchClass.push('#card8');
-            checkMatchId.push('card8');
-            checkMatchLose.push(17);
-            setTimeout(function() {
-                $('#card8').removeClass('flipInX');
-            }, 1100);
+            if (avoidOne == 1 & avoidOne8 == 1) {
+                $('#card8').addClass('animated flipInX');
+                document.getElementById("card8").src = heros[5];
+                moves += 1;
+                checkMatch.push(1);
+                checkMatchClass.push('#card8');
+                checkMatchId.push('card8');
+                checkMatchLose.push(5);
+                setTimeout(function() {
+                    $('#card8').removeClass('flipInX');
+                }, 1100);
+            }
+            console.log(avoidOne);
+            avoidOne8 = 0;
         });
 
         $("#card9").click(function() {
-            $('#card9').addClass('animated flipInX');
-            document.getElementById("card9").src = heros[6];
-            moves += 1;
-            checkMatch.push(1);
-            checkMatchClass.push('#card9');
-            checkMatchId.push('card9');
-            checkMatchLose.push(19);
-            setTimeout(function() {
-                $('#card9').removeClass('flipInX');
-            }, 1100);
+            if (avoidOne == 1 & avoidOne9 == 1) {
+                $('#card9').addClass('animated flipInX');
+                document.getElementById("card9").src = heros[5];
+                moves += 1;
+                checkMatch.push(1);
+                checkMatchClass.push('#card9');
+                checkMatchId.push('card9');
+                checkMatchLose.push(5);
+                setTimeout(function() {
+                    $('#card9').removeClass('flipInX');
+                }, 1100);
+            }
+            console.log(avoidOne);
+            avoidOne9 = 0;
         });
 
         $("#card10").click(function() {
-            $('#card10').addClass('animated flipInX');
-            document.getElementById("card10").src = heros[7];
-            moves += 1;
-            checkMatch.push(1);
-            checkMatchClass.push('#card10');
-            checkMatchId.push('card10');
-            checkMatchLose.push(23);
-            setTimeout(function() {
-                $('#card10').removeClass('flipInX');
-            }, 1100);
+            if (avoidOne ==1 & avoidOne10 == 1) {
+                $('#card10').addClass('animated flipInX');
+                document.getElementById("card10").src = heros[7];
+                moves += 1;
+                checkMatch.push(1);
+                checkMatchClass.push('#card10');
+                checkMatchId.push('card10');
+                checkMatchLose.push(7);
+                setTimeout(function() {
+                    $('#card10').removeClass('flipInX');
+                }, 1100);
+            }
+            console.log(avoidOne);
+            avoidOne10 = 0;
+        });
+
+        $("#card11").click(function() {
+            if (avoidOne == 1 & avoidOne11 == 1) {
+                $('#card11').addClass('animated flipInX');
+                document.getElementById("card11").src = heros[7];
+                moves += 1;
+                checkMatch.push(1);
+                checkMatchClass.push('#card11');
+                checkMatchId.push('card11');
+                checkMatchLose.push(7);
+                setTimeout(function() {
+                    $('#card11').removeClass('flipInX');
+                }, 1100);
+            }
+            console.log(avoidOne);
+            avoidOne11 = 0;
+        });
+
+        $("#card1").click(function() {
+            if (avoidOne ==1 & avoidOne1 == 1) {
+                $('#card1').addClass('animated flipInX');
+                document.getElementById("card1").src = heros[0];
+                moves += 1;
+                checkMatch.push(1);
+                checkMatchClass.push('#card1');
+                checkMatchId.push('card1');
+                checkMatchLose.push(11);
+                setTimeout(function() {
+                    $('#card1').removeClass('flipInX');
+                }, 1100);
+            }
+            console.log(avoidOne);
+            avoidOne1 = 0;
         });
 
         $("#card13").click(function() {
-            $('#card13').addClass('animated flipInX');
-            document.getElementById("card13").src = heros[0];
-            moves += 1;
-            checkMatch.push(1);
-            checkMatchClass.push('#card13');
-            checkMatchId.push('card13');
-            checkMatchLose.push(3);
-            setTimeout(function() {
-                $('#card13').removeClass('flipInX');
-            }, 1100);
+            if (avoidOne == 1 & avoidOne13 == 1) {
+                $('#card13').addClass('animated flipInX');
+                document.getElementById("card13").src = heros[0];
+                moves += 1;
+                checkMatch.push(1);
+                checkMatchClass.push('#card13');
+                checkMatchId.push('card13');
+                checkMatchLose.push(11);
+                setTimeout(function() {
+                    $('#card13').removeClass('flipInX');
+                }, 1100);
+            }
+            console.log(avoidOne);
+            avoidOne13 = 0;
         });
 
         $("#card14").click(function() {
-            $('#card14').addClass('animated flipInX');
-            document.getElementById("card14").src = heros[1];
-            moves += 1;
-            checkMatch.push(1);
-            checkMatchClass.push('#card14');
-            checkMatchId.push('card14');
-            checkMatchLose.push(5);
-            setTimeout(function() {
-                $('#card14').removeClass('flipInX');
-            }, 1100);
+            if (avoidOne == 1 & avoidOne14 == 1) {
+                $('#card14').addClass('animated flipInX');
+                document.getElementById("card14").src = heros[1];
+                moves += 1;
+                checkMatch.push(1);
+                checkMatchClass.push('#card14');
+                checkMatchId.push('card14');
+                checkMatchLose.push(13);
+                setTimeout(function() {
+                    $('#card14').removeClass('flipInX');
+                }, 1100);
+            }
+            console.log(avoidOne);
+            avoidOne14 =0;
+        });
+
+        $("#card2").click(function() {
+            if (avoidOne ==1 & avoidOne2 == 1) {
+                $('#card2').addClass('animated flipInX');
+                document.getElementById("card2").src = heros[1];
+                moves += 1;
+                checkMatch.push(1);
+                checkMatchClass.push('#card2');
+                checkMatchId.push('card2');
+                checkMatchLose.push(13);
+                setTimeout(function() {
+                    $('#card2').removeClass('flipInX');
+                }, 1100);
+            }
+            console.log(avoidOne);
+            avoidOne2 = 0;
         });
 
         $("#card15").click(function() {
-            $('#card15').addClass('animated flipInX');
-            document.getElementById("card15").src = heros[2];
-            moves += 1;
-            checkMatch.push(1);
-            checkMatchClass.push('#card15');
-            checkMatchId.push('card15');
-            checkMatchLose.push(7);
-            setTimeout(function() {
-                $('#card15').removeClass('flipInX');
-            }, 1100);
+            if (avoidOne == 1 & avoidOne15 == 1) {
+                $('#card15').addClass('animated flipInX');
+                document.getElementById("card15").src = heros[2];
+                moves += 1;
+                checkMatch.push(1);
+                checkMatchClass.push('#card15');
+                checkMatchId.push('card15');
+                checkMatchLose.push(17);
+                setTimeout(function() {
+                    $('#card15').removeClass('flipInX');
+                }, 1100);
+            }
+            console.log(avoidOne);
+            avoidOne15 = 0;
+        });
+
+        $("#card3").click(function() {
+            if (avoidOne ==1 & avoidOne3 ==1) {
+                $('#card3').addClass('animated flipInX');
+                document.getElementById("card3").src = heros[2];
+                moves += 1;
+                checkMatch.push(1);
+                checkMatchClass.push('#card3');
+                checkMatchId.push('card3');
+                checkMatchLose.push(17);
+                setTimeout(function() {
+                    $('#card3').removeClass('flipInX');
+                }, 1100);
+            }
+            console.log(avoidOne);
+            avoidOne3 = 0;
         });
 
         $("#card16").click(function() {
-            $('#card16').addClass('animated flipInX');
-            document.getElementById("card16").src = heros[3];
-            moves += 1;
-            checkMatch.push(1);
-            checkMatchClass.push('#card16');
-            checkMatchId.push('card16');
-            checkMatchLose.push(11);
-            setTimeout(function() {
-                $('#card16').removeClass('flipInX');
-            }, 1100);
+            if (avoidOne ==1 & avoidOne16 == 1) {
+                $('#card16').addClass('animated flipInX');
+                document.getElementById("card16").src = heros[3];
+                moves += 1;
+                checkMatch.push(1);
+                checkMatchClass.push('#card16');
+                checkMatchId.push('card16');
+                checkMatchLose.push(19);
+                setTimeout(function() {
+                    $('#card16').removeClass('flipInX');                
+                }, 1100);
+            }
+            console.log(avoidOne);
+            avoidOne16 = 0;
         });
 
-        $("#card19").click(function() {
-            $('#card19').addClass('animated flipInX');
-            document.getElementById("card19").src = heros[4];
-            moves += 1;
-            checkMatch.push(1);
-            checkMatchClass.push('#card19');
-            checkMatchId.push('card19');
-            checkMatchLose.push(13);
-            setTimeout(function() {
-                $('#card19').removeClass('flipInX');
-            }, 1100);
+        $("#card6").click(function() {
+            if (avoidOne == 1 & avoidOne6 == 1) {
+                $('#card6').addClass('animated flipInX');
+                document.getElementById("card6").src = heros[3];
+                moves += 1;
+                checkMatch.push(1);
+                checkMatchClass.push('#card6');
+                checkMatchId.push('card6');
+                checkMatchLose.push(19);
+                setTimeout(function() {
+                    $('#card6').removeClass('flipInX');
+                }, 1100);
+            }
+            console.log(avoidOne);
+            avoidOne6 = 0;
         });
-
-        $("#card20").click(function() {
-            $('#card20').addClass('animated flipInX');
-            document.getElementById("card20").src = heros[5];
-            moves += 1;
-            checkMatch.push(1);
-            checkMatchClass.push('#card20');
-            checkMatchId.push('card20');
-            checkMatchLose.push(17);
-            setTimeout(function() {
-                $('#card20').removeClass('flipInX');
-            }, 1100);
-        });
-
-        $("#card21").click(function() {
-            $('#card21').addClass('animated flipInX');
-            document.getElementById("card21").src = heros[6];
-            moves += 1;
-            checkMatch.push(1);
-            checkMatchClass.push('#card21');
-            checkMatchId.push('card21');
-            checkMatchLose.push(19);
-            setTimeout(function() {
-                $('#card21').removeClass('flipInX');
-            }, 1100);
-        });
-
-        $("#card22").click(function() {
-            $('#card22').addClass('animated flipInX');
-            document.getElementById("card22").src = heros[7];
-            moves += 1;
-            checkMatch.push(1);
-            checkMatchClass.push('#card22');
-            checkMatchId.push('card22');
-            checkMatchLose.push(23);
-            setTimeout(function() {
-                $('#card22').removeClass('flipInX');
-            }, 1100);
-        });
+        
+        
         // function that when click on the body will set the conditional statement to decrease the stars rating
         $('#will1').click(function starsDecresing() {
 
@@ -366,7 +451,7 @@
             };
         }
 
-        var randoms = randomNumbers(24),
+        var randoms = randomNumbers(26),
             rand = randoms(),
             result = [];
         while (rand != null) {
@@ -374,16 +459,46 @@
             rand = randoms();
         }
         // array to store variables that will be in the id of the each cards
-        let functions = [];
-        for(y = 1; y < 26; y++) {
+        var functions = [];
+        for(var y = 1; y < 26; y++) {
             functions.push('card'+y)
-            for(i = 0; i < 16; i++) {
+            for(var i = 0; i < 16; i++) {
                 document.getElementsByTagName("img")[i].setAttribute("id", functions[result[i]]);
             }
             
         }
     
         // functions that will trigger the cards
+        
+        var elements = document.getElementsByClassName("card1");
+
+        var myFunction = function() {
+            var attribute = this.getAttribute("data-myattribute");
+            alert(attribute);
+        };
+        
+        for (var i = 0; i < elements.length; i++) {
+            elements[i].addEventListener('click', myFunction, false);
+        }
+            
+        
+
+        /*
+
+                   document.getElementsByClassName(intClassJq+card).click(function() {
+                $(intClassJq+card).addClass('animated flipInX');
+                document.getElementById(intClass+card).src = heros[0];
+                moves += 1;
+                checkMatch.push(1);
+                checkMatchClass.push(intClassJq+card);
+                checkMatchId.push(intClassJq+card);
+                checkMatchLose.push(3);
+                setTimeout(function() {
+                    $(intClassJq+card).removeClass('flipInX');
+                }, 1100);           
+                return;
+            });
+            console.log(intClassJq+card);
 
         $("#card1").click(function() {
             $('#card1').addClass('animated flipInX');
@@ -721,6 +836,7 @@
             }, 1100);
             return;
         });
+        */
         // function that when click on the body will set the conditional statement to decrease the stars rating
         $('#will1').click(function starsDecresing() {
 
@@ -836,6 +952,24 @@
                     checkMatchClass.splice(0, 1);
                     checkMatchId.splice(0, 1);
                     checkMatchId.splice(0, 1);
+                    avoidOne = 1;
+                    avoidOne1 = 1;
+                    avoidOne2 = 1;
+                    avoidOne3 = 1;
+                    avoidOne4 = 1;
+                    avoidOne5 = 1;
+                    avoidOne6 = 1;
+                    avoidOne7 = 1;
+                    avoidOne8 = 1;
+                    avoidOne9 = 1;
+                    avoidOne10 = 1;
+                    avoidOne11 = 1;
+                    avoidOne12 = 1;
+                    avoidOne13 = 1;
+                    avoidOne14 = 1;
+                    avoidOne15 = 1;
+                    avoidOne16 = 1;
+
                 }, 1000);
 
                 setTimeout(function() {
