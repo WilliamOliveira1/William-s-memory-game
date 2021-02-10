@@ -1,5 +1,7 @@
 Memory game project
 
+There is a bug that need to be fix when the screen is above 992px
+
 First was used git bash to control version and after was used Git kraken
 
 This is a project used to the Udacity web front-end fundamentals course.
