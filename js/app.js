@@ -81,8 +81,9 @@
     $("#resetGame").click(function() {
         location.reload();
     });
+    
     // An if statement to set the deck when the screen is under 992 pixel's width.
-    if (window.innerWidth < 992) {
+    if (window.innerWidth < 2999) {
 
         $("#5").remove();
         $("#6").remove();
@@ -430,8 +431,11 @@
         });
 
     }
+
+    // Because of the bug that must be fix this will be stoped for a time, until I have time to fix
+    // Because of this I will set the innerWidth much higher
     // An conditional statement to set the deck when the screen is above 992 pixel's width.
-    if (window.innerWidth > 992) {
+    if (window.innerWidth > 3000) {
 
         // function from http://jsfiddle.net/9h7rc/
         function randomNumbers(max) {
