@@ -81,17 +81,20 @@ function shuffle(array) {
 heros = shuffle(heros);
 
 // Two events function to reset the game
-$("#fresh").click(function () {
-    $('#fresh').addClass('fa-spin');
-    location.reload();
-});
-$("#resetGame").click(function () {
+$("#fresh, #resetGame").click(function () {
+    if($(this)[0].id === "fresh") {
+        $(this).addClass('fa-spin');
+    }
     location.reload();
 });
 
 // An if statement to set the deck when the screen is under 992 pixel's width.
-if (window.innerWidth < 992) {
-    $("#5, #6, #11, #12, #17, #18, #23, #24").remove();
+if (window.innerWidth > 300) {
+    let cardList = 24;
+    if(window.innerWidth < 992) {
+        cardList = 16;
+        $("#5, #6, #11, #12, #17, #18, #23, #24").remove();
+    }    
 
     // function from http://jsfiddle.net/9h7rc/
     function randomNumbers1(max) {
@@ -111,7 +114,7 @@ if (window.innerWidth < 992) {
         };
     }
 
-    let randoms = randomNumbers1(16),
+    let randoms = randomNumbers1(cardList),
         rand = randoms(),
         result1 = [];
     while (rand != null) {
@@ -120,345 +123,33 @@ if (window.innerWidth < 992) {
     }
     // array to store variables that will be in the id of the each cards and store the variables in the img tag
     var functions1 = [];
-    for (var a = 1; a < 26; a++) {
-        functions1.push('card' + a)
-        for (var z = 0; z < 16; z++) {
-            document.getElementsByTagName("img")[z].setAttribute("id", functions1[result1[z]]);
-        }
-    }
+    result1.forEach(function(i) {
+        functions1.push(`card${i+1}`)
+      });
+    for (var z = 0; z < cardList; z++) {
+        document.getElementsByTagName("img")[z].setAttribute("id", functions1[result1[z]]);
+    }        
 
-    // functions that will trigger the cards
-    $("#card12").click(function () {
-        if (avoidOne === 1 & avoidOne12 === 1) {
-            changeCardInfo($(this), 10, 2);
-        }
-        avoidOne12 = 0;
-    });
+    $(".card").attr("cardSelected", true);
+    let heroPosLess = [0, 1, 2, 10, 4, 3, 4, 5, 5, 7, 7, 10, 0, 1, 2, 3];
+    let losePosLess = [11, 13, 17, 2, 3, 19, 3, 5, 5, 7, 7, 2, 11, 13, 17, 19];
+    let heroPos = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+    let losePos = [3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41];
 
-    $("#card4").click(function () {
-        if (avoidOne === 1 & avoidOne4 === 1) {
-            changeCardInfo($(this), 10, 2);
+    $(".card").click(function() {
+        let cardElement = $(this);
+        let isCardSelected = $(this).attr("cardSelected");
+        let cardIndex = parseInt($(this)[0].id.replace("card", "")) - 1;
+        if(isCardSelected) {
+            cardElement.removeAttr("cardSelected");
+            if(window.innerWidth < 992)                
+                changeCardInfo($(this), heroPosLess[cardIndex], losePosLess[cardIndex]);
+            else
+                changeCardInfo($(this), heroPos[cardIndex], losePos[cardIndex]);
         }
-        avoidOne4 = 0;
-    });
-
-    $("#card5").click(function () {
-        if (avoidOne === 1 & avoidOne5 === 1) {
-            changeCardInfo($(this), 4, 3)
-        }
-        avoidOne5 = 0;
-    });
-
-    $("#card7").click(function () {
-        if (avoidOne === 1 & avoidOne7 === 1) {
-            changeCardInfo($(this), 4, 3);
-        }
-        avoidOne7 = 0;
-    });
-
-    $("#card8").click(function () {
-        if (avoidOne === 1 & avoidOne8 === 1) {
-            changeCardInfo($(this), 5, 5);
-        }
-        avoidOne8 = 0;
-    });
-
-    $("#card9").click(function () {
-        if (avoidOne === 1 & avoidOne9 === 1) {
-            changeCardInfo($(this), 5, 5);
-        }
-        avoidOne9 = 0;
-    });
-
-    $("#card10").click(function () {
-        if (avoidOne === 1 & avoidOne10 === 1) {
-            changeCardInfo($(this), 7, 7);
-        }
-        avoidOne10 = 0;
-    });
-
-    $("#card11").click(function () {
-        if (avoidOne === 1 & avoidOne11 === 1) {
-            changeCardInfo($(this), 7, 7);
-        }
-        avoidOne11 = 0;
-    });
-
-    $("#card1").click(function () {
-        if (avoidOne === 1 & avoidOne1 === 1) {
-            changeCardInfo($(this), 0, 11);
-        }
-        avoidOne1 = 0;
-    });
-
-    $("#card13").click(function () {
-        if (avoidOne === 1 & avoidOne13 === 1) {
-            changeCardInfo($(this), 0, 11);
-        }
-        avoidOne13 = 0;
-    });
-
-    $("#card14").click(function () {
-        if (avoidOne === 1 & avoidOne14 === 1) {
-            changeCardInfo($(this), 1, 13);
-        }
-        avoidOne14 = 0;
-    });
-
-    $("#card2").click(function () {
-        if (avoidOne === 1 & avoidOne2 === 1) {
-            changeCardInfo($(this), 1, 13);
-        }
-        avoidOne2 = 0;
-    });
-
-    $("#card15").click(function () {
-        if (avoidOne === 1 & avoidOne15 === 1) {
-            changeCardInfo($(this), 2, 17);
-        }
-        avoidOne15 = 0;
-    });
-
-    $("#card3").click(function () {
-        if (avoidOne === 1 & avoidOne3 === 1) {
-            changeCardInfo($(this), 2, 17);
-        }
-        avoidOne3 = 0;
-    });
-
-    $("#card16").click(function () {
-        if (avoidOne === 1 & avoidOne16 === 1) {
-            changeCardInfo($(this), 3, 19);
-        }
-        avoidOne16 = 0;
-    });
-
-    $("#card6").click(function () {
-        if (avoidOne === 1 & avoidOne6 === 1) {
-            changeCardInfo($(this), 3, 19);
-        }
-        avoidOne6 = 0;
     });    
 }
 
-// Because of the bug that must be fix this will be stoped for a time, until I have time to fix
-// Because of this I will set the innerWidth much higher
-// An conditional statement to set the deck when the screen is above 992 pixel's width.
-if (window.innerWidth > 992) {
-    // function from http://jsfiddle.net/9h7rc/
-    function randomNumbers(max) {
-        function range(upTo) {
-            var result = [];
-            for (var i = 1; i < upTo; i++) result.push(i);
-            return result;
-        }
-
-        function shuffle(o) {
-            for (var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
-            return o;
-        }
-        var myArr = shuffle(range(max));
-        return function () {
-            return myArr.shift();
-        };
-    }
-
-    var randoms = randomNumbers(26),
-        rand = randoms(),
-        result = [];
-    while (rand != null) {
-        result.push(rand);
-        rand = randoms();
-    }
-    // array to store variables that will be in the id of the each cards
-    var functions = [];
-    for (var y = 1; y < 26; y++) {
-        functions.push('card' + y)
-        for (var i = 0; i < 16; i++) {
-            document.getElementsByTagName("img")[i].setAttribute("id", functions[result[i]]);
-        }
-
-    }
-
-    // functions that will trigger the cards
-    var elements = document.getElementsByClassName("card1");
-    var myFunction = function () {
-        var attribute = this.getAttribute("data-myattribute");
-        alert(attribute);
-    };
-
-    for (var i = 0; i < elements.length; i++) {
-        elements[i].addEventListener('click', myFunction, false);
-    }    
-
-    $("#card13").click(function() {
-        if (avoidOne === 1 & avoidOne13 === 1) { 
-            changeCardInfo($(this), 0, 3);
-        }
-        avoidOne13 = 0;        
-    });
-
-    $("#card1").click(function() {
-        if (avoidOne === 1 & avoidOne1 === 1) { 
-            changeCardInfo($(this), 0, 3);
-        }
-        avoidOne1 = 0;        
-    });
-
-    $("#card14").click(function() {
-        if (avoidOne === 1 & avoidOne14 === 1) { 
-            changeCardInfo($(this), 1, 5);
-        }
-        avoidOne14 = 0;        
-    });
-
-    $("#card2").click(function() {
-        if (avoidOne === 1 & avoidOne2 === 1) { 
-            changeCardInfo($(this), 1, 5);
-        }
-        avoidOne2 = 0;        
-    });
-
-    $("#card15").click(function() {
-        if (avoidOne === 1 & avoidOne15 === 1) { 
-            changeCardInfo($(this), 2, 7);
-        }
-        avoidOne15 = 0;        
-    });
-
-    $("#card3").click(function() {
-        if (avoidOne === 1 & avoidOne3 === 1) { 
-            changeCardInfo($(this), 2, 7);
-        }
-        avoidOne3 = 0;        
-    });
-
-    $("#card16").click(function() {
-        if (avoidOne === 1 & avoidOne16 === 1) { 
-            changeCardInfo($(this), 3, 11);
-        }
-        avoidOne16 = 0;        
-    });
-
-    $("#card4").click(function() {
-        if (avoidOne === 1 & avoidOne4 === 1) { 
-            changeCardInfo($(this), 3, 11);
-        }
-        avoidOne4 = 0;        
-    });
-
-    $("#card17").click(function() {
-        if (avoidOne === 1 & avoidOne17 === 1) { 
-            changeCardInfo($(this), 4, 13);
-        }
-        avoidOne17 = 0;        
-    });
-
-    $("#card5").click(function() {
-        if (avoidOne === 1 & avoidOne5 === 1) { 
-            changeCardInfo($(this), 4, 13);
-        }
-        avoidOne5 = 0;        
-    });
-
-    $("#card18").click(function() {
-        if (avoidOne === 1 & avoidOne18 === 1) { 
-            changeCardInfo($(this), 5, 17);
-        }
-        avoidOne18 = 0;        
-    });
-
-    $("#card6").click(function() {
-        if (avoidOne === 1 & avoidOne6 === 1) { 
-            changeCardInfo($(this), 5, 17);
-        }
-        avoidOne6 = 0;       
-    });
-
-    $("#card19").click(function() {
-        if (avoidOne === 1 & avoidOne19 === 1) { 
-            changeCardInfo($(this), 6, 19);
-        }
-        avoidOne19 = 0;        
-    });
-
-    $("#card7").click(function() {
-        if (avoidOne === 1 & avoidOne7 === 1) { 
-            changeCardInfo($(this), 6, 19);
-        }
-        avoidOne7 = 0;        
-    });
-
-    $("#card20").click(function() {
-        if (avoidOne === 1 & avoidOne20 === 1) { 
-            changeCardInfo($(this), 7, 23);
-        }
-        avoidOne20 = 0;        
-    });
-
-    $("#card8").click(function() {
-        if (avoidOne === 1 & avoidOne8 === 1) { 
-            changeCardInfo($(this), 7, 23);
-        }
-        avoidOne8 = 0;        
-    });
-
-    $("#card21").click(function() {
-        if (avoidOne === 1 & avoidOne21 === 1) { 
-            changeCardInfo($(this), 8, 29);
-        }
-        avoidOne21 = 0;        
-    });
-
-    $("#card9").click(function() {
-        if (avoidOne === 1 & avoidOne9 === 1) { 
-            changeCardInfo($(this), 8, 29);
-        }
-        avoidOne9 = 0;        
-    });
-
-    $("#card22").click(function() {
-        if (avoidOne === 1 & avoidOne22 === 1) { 
-            changeCardInfo($(this), 9, 31);
-        }
-        avoidOne22 = 0;        
-    });
-
-    $("#card10").click(function() {
-        if (avoidOne === 1 & avoidOne10 === 1) { 
-            changeCardInfo($(this), 9, 31);
-        }
-        avoidOne10 = 0;        
-    });
-
-    $("#card23").click(function() {
-        if (avoidOne === 1 & avoidOne23 === 1) { 
-            changeCardInfo($(this), 10, 37);
-        }
-        avoidOne23 = 0;        
-    });
-
-    $("#card11").click(function() {
-        if (avoidOne === 1 & avoidOne11 === 1) { 
-            changeCardInfo($(this), 10, 37);
-        }
-        avoidOne11 = 0;        
-    });
-
-    $("#card24").click(function() {
-        if (avoidOne === 1 & avoidOne24 === 1) { 
-            changeCardInfo($(this), 11, 41);
-        }
-        avoidOne24 = 0;        
-    });
-
-    $("#card12").click(function() {
-        if (avoidOne === 1 & avoidOne12 === 1) { 
-            changeCardInfo($(this), 11, 41);
-        }
-        avoidOne12 = 0;        
-    });
-}
 // An event function set when the screen changes it's sizes
 document.getElementsByTagName("BODY")[0].onresize = function () {
     resizeSmall();
@@ -516,7 +207,8 @@ $('#will1').click(function memory() {
         return;
     }
     if (checkMatchClass.length === 2) {
-        if (checkMatchLose[0] % checkMatchLose[1] != 0) {
+        if (checkMatchLose[0] % checkMatchLose[1] !== 0) {
+            $(".card").removeAttr("cardSelected");
             [1,2].forEach(function(i) {
                 checkMatch.splice(0, 1);
                 checkMatchLose.splice(0, 1);
@@ -527,23 +219,22 @@ $('#will1').click(function memory() {
                     checkMatchClass.splice(0, 1);
                     checkMatchId.splice(0, 1);
                   });
-                avoidOne = avoidOne1 = avoidOne2 = avoidOne3 = avoidOne4 = avoidOne5 = avoidOne6 = avoidOne7 = avoidOne8 = avoidOne9 = avoidOne10 = 1;
-                avoidOne11 = avoidOne12 = avoidOne13 = avoidOne14 = avoidOne15 = avoidOne16 = avoidOne17 = avoidOne18 = avoidOne19 = avoidOne20 = avoidOne21 = avoidOne22 = avoidOne23 = avoidOne24 = 1;
-            }, 1000);
+                  $(".card").attr("cardSelected", true);
+            }, 300);
 
             setTimeout(() => {
                 $(`${pos4}, ${pos3}`).removeClass('shake');
-            }, 1600);
+            }, 1000);
 
             setTimeout(() => {
                 $(`${pos4}, ${pos3}`).addClass('flipOutX');
                 $(`#${pos2}`)[0].attributes[1].value = card0;
                 $(`#${pos1}`)[0].attributes[1].value = card0;
-            }, 1700);
+            }, 1300);
 
             setTimeout(() => {
-                $(`${pos4}, ${pos3}`).removeClass('flipOutX');
-            }, 2000);
+                $(`${pos4}, ${pos3}`).removeClass('flipOutX');                
+            }, 1500);
 
             return memory;
         }
