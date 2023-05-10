@@ -1,6 +1,5 @@
 //Var's global of the game.
 var timeCount = 0;
-var showTimer;
 var countToWin = 0;
 var moves = 0;
 var countingStars = 0;
@@ -9,33 +8,7 @@ var checkMatch = [];
 var checkMatchClass = [];
 var checkMatchId = [];
 var checkMatchLose = [];
-var sec;
-var i;
-var avoidOne = 1;
-var avoidOne1 = 1;
-var avoidOne2 = 1;
-var avoidOne3 = 1;
-var avoidOne4 = 1;
-var avoidOne5 = 1;
-var avoidOne6 = 1;
-var avoidOne7 = 1;
-var avoidOne8 = 1;
-var avoidOne9 = 1;
-var avoidOne10 = 1;
-var avoidOne11 = 1;
-var avoidOne12 = 1;
-var avoidOne13 = 1;
-var avoidOne14 = 1;
-var avoidOne15 = 1;
-var avoidOne16 = 1;
-var avoidOne17 = 1;
-var avoidOne18 = 1;
-var avoidOne19 = 1;
-var avoidOne20 = 1;
-var avoidOne21 = 1;
-var avoidOne22 = 1;
-var avoidOne23 = 1;
-var avoidOne24 = 1;
+var i, showTimer, sec;
 
 
 // Array with heros card's image path. 
@@ -220,7 +193,7 @@ $('#will1').click(function memory() {
                     checkMatchId.splice(0, 1);
                   });
                   $(".card").attr("cardSelected", true);
-            }, 300);
+            }, 700);
 
             setTimeout(() => {
                 $(`${pos4}, ${pos3}`).removeClass('shake');
